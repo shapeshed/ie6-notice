@@ -1,0 +1,47 @@
+/*-----------------------------------------------------------------------------
+IE6 and below Screen Stylesheet
+version:   1.0
+date:      20/02/09
+author:    George Ornbo
+email:     george at shapeshed dot com
+website:   http://shapeshed.com
+
+-----------------------------------------------------------------------------*/
+
+/* 
+	In order to stop the position:fixed being jerky we need this
+	@see http://www.gunlaug.no/contents/wd_additions_15.html
+	
+	If you are using a background image on body declare it here	
+*/
+* html,* html body{
+    background: #fff url(image.jpg) fixed;
+ }
+
+/* 
+	Fix for position:fixed in IE6 (see why it must die?)
+	@see http://www.gunlaug.no/contents/wd_additions_15.html
+*/
+#ie6-message {
+	position: absolute;
+	top:expression(eval(document.compatMode &&
+	document.compatMode=='CSS1Compat') ?
+	documentElement.scrollTop
+	+(documentElement.clientHeight-this.clientHeight) 
+	: document.body.scrollTop
+	+(document.body.clientHeight-this.clientHeight));
+	left: 0;
+	width: 100%;
+	padding: 1%;
+	margin: 0;
+	background: #ffffcc;
+	filter: alpha(opacity=95);
+}
+#ie6-message p
+	{
+	text-align: left;
+	color: #000;
+	padding: 0 0 0 50px;
+	margin: 0;
+	background:transparent url('/images/icons/warning.gif') no-repeat center left;	
+}
