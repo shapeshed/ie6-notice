@@ -97,7 +97,7 @@ function ie6Notice()
 		noticeDiv.style.display="none";
 		ie6Css.setAttribute("href", "");
 		return false;
-    }
+	}
 		
 }
 ie6CookieCheck();
