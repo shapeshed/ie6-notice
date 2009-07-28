@@ -98,7 +98,7 @@ function ie6Notice()
 		ie6Css.removeAttribute("href");
 		ie6css = null;
 		noticeDiv = null;
-		return false.;
+		return false;
 	}
 		
 }
