@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------
-IE6 and below Screen Stylesheet
+IE6 Notice Stylesheet
 version:   1.0
-date:      20/02/09
+date:      28/07/09
 author:    George Ornbo
 email:     george at shapeshed dot com
 website:   http://shapeshed.com
@@ -12,36 +12,53 @@ website:   http://shapeshed.com
 	In order to stop the position:fixed being jerky we need this
 	@see http://www.gunlaug.no/contents/wd_additions_15.html
 	
-	If you are using a background image on body declare it here	
 */
 * html,* html body{
-    background: #fff url(image.jpg) fixed;
+    background: transparent url(image.jpg) fixed;
  }
 
 /* 
 	Fix for position:fixed in IE6 (see why it must die?)
 	@see http://www.gunlaug.no/contents/wd_additions_15.html
 */
-#ie6-message {
+#ie6-notice {
 	position: absolute;
 	top:expression(eval(document.compatMode &&
 	document.compatMode=='CSS1Compat') ?
-	documentElement.scrollTop
-	+(documentElement.clientHeight-this.clientHeight) 
-	: document.body.scrollTop
-	+(document.body.clientHeight-this.clientHeight));
+	documentElement.scrollTop : document.body.scrollTop);
 	left: 0;
+	top: 0;
 	width: 100%;
-	padding: 1%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 1%;
+	padding-right: 1%;
 	margin: 0;
 	background: #ffffcc;
 	filter: alpha(opacity=95);
 }
-#ie6-message p
+#ie6-notice p#ie6-text
 	{
 	text-align: left;
+	float: left;
 	color: #000;
-	padding: 0 0 0 50px;
+	padding: 5px 0 5px 50px;
 	margin: 0;
-	background:transparent url('/images/icons/warning.gif') no-repeat center left;	
+	width: 65%;	
+	background:transparent url('http://shapeshed.github.com/ie6-notice/images/icons/warning.gif') no-repeat center left;	
+}
+#ie6-notice p#ie6-hide-notice a
+	{
+	text-align: right;
+	float: right;
+	color: #000;
+	padding: 5px 30px 5px 0px;
+	margin: 0;
+	width: 17%;	
+	background:transparent url('http://shapeshed.github.com/ie6-notice/images/icons/cancel.gif') no-repeat center right;
+	border-bottom: 0;
+}
+#ie6notice .hide
+	{
+	display: none;
 }
