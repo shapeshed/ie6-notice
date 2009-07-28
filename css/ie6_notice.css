@@ -58,7 +58,3 @@ website:   http://shapeshed.com
 	background:transparent url('http://shapeshed.github.com/ie6-notice/images/icons/cancel.gif') no-repeat center right;
 	border-bottom: 0;
 }
-#ie6notice .hide
-	{
-	display: none;
-}
