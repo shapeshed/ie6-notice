@@ -19,7 +19,7 @@ function ie6Notice()
 	/*------------------------------
 	Set variables
 	------------------------------*/		
-	var head, body, noticeDiv, noticeParagraph, noticeText;
+	var head, body, noticeDiv, noticeParagraph, noticeText, ie6css, hideText, hideLink, hideParagraph;
 
 	/*------------------------------
 	Check getElementsByTagName support
@@ -95,7 +95,9 @@ function ie6Notice()
 		var expiry = new Date(today.getTime() + 30 * 86400 * 1000);
 		document.cookie = name + "=" + "ie6Notice" + "; expires=" + expiry.toGMTString() + "; path=/"; 
 		noticeDiv.style.display="none";
-		ie6Css.setAttribute("href", "");
+		ie6Css.removeAttribute("href");
+		ie6css = null;
+		noticeDiv = null;
 		return false;
 	}
 		
