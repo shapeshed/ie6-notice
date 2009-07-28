@@ -14,7 +14,6 @@ function ie6CookieCheck()
 		}
 	}
 }
-
 function ie6Notice() 
 {		
 	/*------------------------------
@@ -90,14 +89,15 @@ function ie6Notice()
 	hideText = document.createTextNode('Hide this message');
 	hideLink.appendChild(hideText);
 	
-	hideParagraph.onclick = function(){
-			var today = new Date(); 
-			var expiry = new Date(today.getTime() + 30 * 86400 * 1000);
-			document.cookie = name + "=" + "ie6Notice" + "; expires=" + expiry.toGMTString() + "; path=/"; 
-			noticeDiv.style.display="none";
-			ie6Css.setAttribute("href", "");
-	        return false;
-	    }
+	hideParagraph.onclick = function()
+	{
+		var today = new Date(); 
+		var expiry = new Date(today.getTime() + 30 * 86400 * 1000);
+		document.cookie = name + "=" + "ie6Notice" + "; expires=" + expiry.toGMTString() + "; path=/"; 
+		noticeDiv.style.display="none";
+		ie6Css.setAttribute("href", "");
+		return false;
+    }
 		
 }
 ie6CookieCheck();
